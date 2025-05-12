@@ -1,12 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { ImageBackground, SafeAreaView, StyleSheet, Text, View, Image } from 'react-native';
+import { ImageBackground, SafeAreaView, StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Alert, Pressable} from 'react-native';
 
 
 const imgFondo = require('./assets/fondo.jpg');
 const imgPerfil = require('./assets/fotoPerfil.jpg')
 
 export default function App() {
-
   return (
    
       <View style={styles.container}>
@@ -19,7 +18,13 @@ export default function App() {
           <SafeAreaView style={{flex:1}}>
             <View style={styles.cardContainer}>
               <Image source={imgPerfil} style={styles.image}/>
-              <Text>Matias Halac</Text>
+              <Text style={{fontWeight: 'bold', fontSize: 20, fontFamily: 'Georgia'}}>Matias Halac</Text>
+              <Text style={{marginTop: '2%'}}>Full Stack Developer</Text>
+              <TextInput keyboardType='default' style={styles.Ingreso}>Nombre</TextInput>
+              <TouchableOpacity onPress={() => Alert.alert("¡Hola!")} style={styles.Touchable}><Text style={{color: 'white', textAlign: 'center'}}>Contactar</Text></TouchableOpacity>
+              <Pressable onPress={() => Alert.alert("El perfil esta en contruccion vuelva pronto")} style={styles.Pressable}>
+                <Text style={{textAlign: 'center', color: 'white'}}>Ver Perfil</Text>
+              </Pressable>
             </View>
            
           </SafeAreaView>
@@ -42,16 +47,33 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   cardContainer: {
+    borderRadius: '10%',
     backgroundColor: 'white',
-    width: '50%',
-    height: 'auto',
-    margin: '25%',
+    width: '60%',
+    height: '40%',
+    margin: '20%',
     alignItems: 'center'
   },
   image: {
     margin: '10%',
     width: '60%',
-    height: '40%',
-    
+    height: '40%',  
+  },
+  Ingreso: {
+    textAlign: 'center',
+    borderColor: 'black',
+    borderWidth: 1,
+    width: '55%',
+    margin: '2%'
+  },
+  Touchable: {
+    width: '55%',
+    backgroundColor: 'black'
+  },
+  Pressable: {
+    marginTop: '2%',
+    textAlign: 'center',
+    width: '55%',
+    backgroundColor: 'blue'
   }
 });
