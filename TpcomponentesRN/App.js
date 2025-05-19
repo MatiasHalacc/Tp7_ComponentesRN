@@ -11,7 +11,7 @@ export default function App() {
       <View style={styles.container}>
         <ImageBackground source = {imgFondo} resizeMode="cover" style={styles.background}>
           <StatusBar style="light" />
-          <SafeAreaView style={{flex:1}}>
+          <SafeAreaView style={{flex:1, justifyContent: 'center'}}>
             <View style={styles.cardContainer}>
               <Image source={imgPerfil} style={styles.image}/>
               <Text style={{fontWeight: 'bold', fontSize: 20, fontFamily: 'Georgia'}}>Matias Halac</Text>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     height: '40%',  
   },
   Ingreso: {
-    borderRadius: '5%',
+    borderRadius: 20,
     textAlign: 'center',
     borderColor: 'black',
     borderWidth: 1,
@@ -68,12 +68,12 @@ const styles = StyleSheet.create({
     margin: '2%'
   },
   Touchable: {
-    borderRadius: '5%',
+    borderRadius: 20,
     width: '75%',
     backgroundColor: 'black'
   },
   Pressable: {
-    borderRadius: '5%',
+    borderRadius: 20,
     marginTop: '2%',
     textAlign: 'center',
     width: '75%',
@@ -85,3 +85,5 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 });
+
+
